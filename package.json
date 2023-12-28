@@ -1,7 +1,9 @@
 {
   "name": "@nodejs-grpc-experiment/source",
   "version": "0.0.0",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many -t build"
+  },
   "private": true,
   "dependencies": {
     "@grpc/grpc-js": "^1.8.0",
