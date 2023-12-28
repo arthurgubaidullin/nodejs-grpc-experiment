@@ -20,6 +20,9 @@
       ],
       "@nodejs-grpc-experiment/helloworld-proto-2": [
         "helloworld-proto-2/src/index.ts"
+      ],
+      "@nodejs-grpc-experiment/helloworld-proto-3": [
+        "helloworld-proto-3/src/index.ts"
       ]
     }
   },
