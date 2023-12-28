@@ -23,7 +23,8 @@
         "eamodio.gitlens",
         "dbaeumer.vscode-eslint",
         "EditorConfig.EditorConfig",
-        "firsttris.vscode-jest-runner"
+        "firsttris.vscode-jest-runner",
+        "ms-azuretools.vscode-docker"
       ]
     }
   },
