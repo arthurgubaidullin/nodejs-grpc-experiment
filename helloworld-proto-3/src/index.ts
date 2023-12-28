@@ -1,1 +1,1 @@
-export * from './lib/helloworld-proto-3';
+export * as services from './lib/helloworld_grpc_pb';
