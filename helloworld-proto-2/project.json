@@ -4,7 +4,15 @@
   "sourceRoot": "helloworld-proto-2/src",
   "projectType": "library",
   "targets": {
+    "build:proto": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "grpc_tools_node_protoc --js_out=import_style=commonjs_strict,binary:./ --grpc_out=grpc_js:./ helloworld.proto",
+        "cwd": "helloworld-proto-2/src/lib"
+      }
+    },
     "build": {
+      "dependsOn": ["build:proto"],
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
@@ -12,7 +20,6 @@
         "main": "helloworld-proto-2/src/index.ts",
         "tsConfig": "helloworld-proto-2/tsconfig.lib.json",
         "assets": [],
-        "generatePackageJson": true,
         "format": ["cjs"]
       }
     },
