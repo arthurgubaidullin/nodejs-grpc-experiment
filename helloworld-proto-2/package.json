@@ -1,0 +1,7 @@
+{
+  "name": "@nodejs-grpc-experiment/helloworld-proto-2",
+  "version": "0.0.1",
+  "dependencies": {},
+  "type": "commonjs",
+  "main": "./index.cjs"
+}

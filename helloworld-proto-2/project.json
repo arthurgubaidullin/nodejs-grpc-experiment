@@ -1,0 +1,25 @@
+{
+  "name": "helloworld-proto-2",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "helloworld-proto-2/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/helloworld-proto-2",
+        "main": "helloworld-proto-2/src/index.ts",
+        "tsConfig": "helloworld-proto-2/tsconfig.lib.json",
+        "assets": [],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

@@ -17,6 +17,9 @@
     "paths": {
       "@nodejs-grpc-experiment/helloworld-proto": [
         "helloworld-proto/src/index.js"
+      ],
+      "@nodejs-grpc-experiment/helloworld-proto-2": [
+        "helloworld-proto-2/src/index.ts"
       ]
     }
   },
