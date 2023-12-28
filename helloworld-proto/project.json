@@ -1,0 +1,23 @@
+{
+  "name": "helloworld-proto",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "helloworld-proto/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/helloworld-proto",
+        "main": "helloworld-proto/src/index.js",
+        "tsConfig": "helloworld-proto/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
