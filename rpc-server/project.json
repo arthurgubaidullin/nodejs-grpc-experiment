@@ -1,0 +1,65 @@
+{
+  "name": "rpc-server",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "rpc-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/rpc-server",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "rpc-server/src/main.ts",
+        "tsConfig": "rpc-server/tsconfig.app.json",
+        "assets": ["rpc-server/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "generateLockfile": true,
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rpc-server:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rpc-server:build:development"
+        },
+        "production": {
+          "buildTarget": "rpc-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f rpc-server/Dockerfile . -t rpc-server"
+    }
+  },
+  "tags": []
+}
