@@ -7,7 +7,7 @@
     "build:proto": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=grpc_js:./ helloworld-proto/src/lib/*.proto"
+        "command": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:. --grpc_out=grpc_js:. helloworld-proto/src/lib/*.proto"
       }
     },
     "build": {
