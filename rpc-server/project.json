@@ -4,7 +4,14 @@
   "sourceRoot": "rpc-server/src",
   "projectType": "application",
   "targets": {
+    "prebuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=rpc-server/src/ protos/*.proto"
+      }
+    },
     "build": {
+      "dependsOn": ["prebuild"],
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
