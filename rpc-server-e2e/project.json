@@ -4,7 +4,14 @@
   "implicitDependencies": ["rpc-server"],
   "projectType": "application",
   "targets": {
+    "gen:types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=rpc-server-e2e/src/rpc-server protos/*.proto"
+      }
+    },
     "e2e": {
+      "dependsOn": ["gen:types"],
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
