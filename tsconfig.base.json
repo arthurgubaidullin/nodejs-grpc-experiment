@@ -14,17 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@nodejs-grpc-experiment/helloworld-proto": [
-        "helloworld-proto/src/index.js"
-      ],
-      "@nodejs-grpc-experiment/helloworld-proto-2": [
-        "helloworld-proto-2/src/index.ts"
-      ],
-      "@nodejs-grpc-experiment/helloworld-proto-3": [
-        "helloworld-proto-3/src/index.ts"
-      ]
-    }
+    "paths": {}
   },
   "exclude": ["node_modules", "tmp"]
 }
