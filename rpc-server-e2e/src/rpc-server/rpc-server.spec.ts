@@ -1,12 +1,30 @@
-import { execSync } from 'child_process';
-import { join } from 'path';
+import grpc from '@grpc/grpc-js';
+import protoLoader from '@grpc/proto-loader';
+import { ProtoGrpcType } from './helloworld';
+
+const PROTO_PATH = __dirname + '../../../protos/helloworld.proto';
+
+const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+  keepCase: true,
+  longs: String,
+  enums: String,
+  defaults: true,
+  oneofs: true,
+});
+
+const hello_proto = (
+  grpc.loadPackageDefinition(packageDefinition) as unknown as ProtoGrpcType
+).helloworld;
 
 describe('CLI tests', () => {
   it('should print a message', () => {
-    const cliPath = join(process.cwd(), 'dist/rpc-server');
+    const client = new hello_proto.Greeter(
+      'localhost:50051',
+      grpc.credentials.createInsecure()
+    );
 
-    const output = execSync(`node ${cliPath}`).toString();
-
-    expect(output).toMatch(/Hello World/);
+    client.sayHello({ name: 'world' }, function (err, response) {
+      expect(response?.message).toMatch(/Hello World/);
+    });
   });
 });
