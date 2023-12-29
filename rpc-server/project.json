@@ -22,7 +22,13 @@
         "bundle": false,
         "main": "rpc-server/src/main.ts",
         "tsConfig": "rpc-server/tsconfig.app.json",
-        "assets": ["rpc-server/src/assets"],
+        "assets": [
+          {
+            "glob": "**/*.proto",
+            "input": "protos",
+            "output": "."
+          }
+        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
