@@ -5,7 +5,9 @@
     "build": "nx run-many -t build"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.13"
+  },
   "devDependencies": {
     "@nx/esbuild": "17.2.8",
     "@nx/eslint": "17.2.8",
