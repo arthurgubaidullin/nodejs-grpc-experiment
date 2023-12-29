@@ -3,8 +3,6 @@ import * as protoLoader from '@grpc/proto-loader';
 import { ProtoGrpcType } from './helloworld';
 import { GreeterHandlers } from './helloworld/Greeter';
 
-console.log(__dirname);
-
 const PROTO_PATH = __dirname + '/../../helloworld.proto';
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
