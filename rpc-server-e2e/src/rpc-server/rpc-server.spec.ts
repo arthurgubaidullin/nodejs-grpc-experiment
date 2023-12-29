@@ -12,13 +12,13 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   oneofs: true,
 });
 
-const hello_proto = (
+const helloProto = (
   grpc.loadPackageDefinition(packageDefinition) as unknown as ProtoGrpcType
 ).helloworld;
 
 describe('CLI tests', () => {
   it('should print a message', (done) => {
-    const client = new hello_proto.Greeter(
+    const client = new helloProto.Greeter(
       'localhost:50051',
       grpc.credentials.createInsecure()
     );
