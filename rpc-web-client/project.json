@@ -1,0 +1,23 @@
+{
+  "name": "rpc-web-client",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "rpc-web-client/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/rpc-web-client",
+        "main": "rpc-web-client/src/index.ts",
+        "tsConfig": "rpc-web-client/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}

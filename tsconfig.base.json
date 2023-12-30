@@ -21,7 +21,8 @@
       ],
       "@nodejs-grpc-experiment/helloworld-grpc-types": [
         "helloworld/service-types/src/index.ts"
-      ]
+      ],
+      "@nodejs-grpc-experiment/rpc-web-client": ["rpc-web-client/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
