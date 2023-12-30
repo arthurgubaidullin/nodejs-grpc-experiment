@@ -1,0 +1,16 @@
+{
+  "id": "protobuf-javascript",
+  "version": "1.0.2",
+  "name": "Protocol Buffer (Protobuf) JS Compiler (via Github Releases)",
+  "documentationURL": "",
+  "description": "A compiler for protocol buffer definition files.",
+  "options": {
+    "version": {
+      "default": "latest",
+      "description": "Select the version to install.",
+      "proposals": ["latest"],
+      "type": "string"
+    }
+  },
+  "installsAfter": ["ghcr.io/devcontainers-contrib/features/gh-release"]
+}
