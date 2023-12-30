@@ -1,7 +1,9 @@
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
-import { ProtoGrpcType } from './helloworld';
-import { GreeterHandlers } from './helloworld/Greeter';
+import {
+  GreeterHandlers,
+  ProtoGrpcType,
+} from '@nodejs-grpc-experiment/helloworld-types';
 
 const PROTO_PATH = __dirname + '/../../helloworld.proto';
 
