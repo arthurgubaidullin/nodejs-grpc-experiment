@@ -4,14 +4,7 @@
   "sourceRoot": "web-app/src",
   "projectType": "application",
   "targets": {
-    "gen:types": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "protoc -I=protos helloworld.proto --js_out=import_style=commonjs:web-app/src/proto --grpc-web_out=import_style=commonjs,mode=grpcwebtext:web-app/src/proto"
-      }
-    },
     "build": {
-      "dependsOn": ["gen:types"],
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
