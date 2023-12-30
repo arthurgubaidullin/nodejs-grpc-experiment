@@ -4,7 +4,14 @@
   "sourceRoot": "helloworld-types/src",
   "projectType": "library",
   "targets": {
+    "gen:types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=helloworld-types/src/lib protos/*.proto"
+      }
+    },
     "build": {
+      "dependsOn": ["gen:types"],
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
