@@ -14,8 +14,7 @@ ensure_nanolayer nanolayer_location "v0.5.4"
 $nanolayer_location \
     install \
     devcontainer-feature \
-    "ghcr.io/devcontainers-contrib/features/gh-release:1.0.23" \
-    --option repo='protocolbuffers/protobuf-javascript' --option binaryNames='protoc-gen-js' --option version="$VERSION" --option assetRegex='.+\.tar\.gz'
+    "ghcr.io/devcontainers-contrib/features/gh-release:1.0.24" --option repo='protocolbuffers/protobuf-javascript' --option binaryNames='protoc-gen-js' --option version='$VERSION' --option assetRegex='protobuf-javascript-\d+\.\d+\.\d+-linux-aarch_64\.tar\.gz'
 
 
 
