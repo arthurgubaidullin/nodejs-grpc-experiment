@@ -11,7 +11,7 @@
     "ghcr.io/devcontainers-contrib/features/protoc:1": {},
     "ghcr.io/devcontainers-contrib/features/gh-release:1": {
       "repo": "grpc/grpc-web",
-      "binaryNames": "protoc-gen-js",
+      "binaryNames": "protoc-gen-grpc-web",
       "version": "latest",
       "assetRegex": "protoc-gen-grpc-web-\\d+\\.\\d+\\.\\d+-linux-aarch64",
       "binLocation": "/usr/local/bin"
