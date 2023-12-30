@@ -15,7 +15,8 @@
       "version": "latest",
       "assetRegex": "protoc-gen-grpc-web-\\d+\\.\\d+\\.\\d+-linux-aarch64",
       "binLocation": "/usr/local/bin"
-    }
+    },
+    "./protobuf-javascript": { "version": "latest" }
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
