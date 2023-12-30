@@ -1,23 +1,6 @@
 import * as grpc from '@grpc/grpc-js';
-import * as protoLoader from '@grpc/proto-loader';
-import {
-  GreeterHandlers,
-  ProtoGrpcType,
-} from '@nodejs-grpc-experiment/helloworld-grpc-types';
-
-const PROTO_PATH = __dirname + '/../../helloworld.proto';
-
-const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true,
-});
-
-const proto = (
-  grpc.loadPackageDefinition(packageDefinition) as unknown as ProtoGrpcType
-).helloworld;
+import { helloworldPackageDefinition } from '@nodejs-grpc-experiment/helloworld-grpc-package-definition';
+import { GreeterHandlers } from '@nodejs-grpc-experiment/helloworld-grpc-types';
 
 const service: GreeterHandlers = {
   SayHello: (call, callback) => {
@@ -30,7 +13,7 @@ const service: GreeterHandlers = {
 
 function main() {
   const server = new grpc.Server();
-  server.addService(proto.Greeter.service, service);
+  server.addService(helloworldPackageDefinition.Greeter.service, service);
   server.bindAsync(
     '0.0.0.0:50051',
     grpc.ServerCredentials.createInsecure(),
