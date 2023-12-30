@@ -4,7 +4,14 @@
   "sourceRoot": "rpc-web-client/src",
   "projectType": "library",
   "targets": {
+    "gen:types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "protoc -I=protos helloworld.proto --js_out=import_style=commonjs:rpc-web-client/src/lib --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:rpc-web-client/src/lib"
+      }
+    },
     "build": {
+      "dependsOn": ["gen:types"],
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
