@@ -1,1 +1,1 @@
-export * from './lib/helloworld-types';
+export * from './lib/helloworld';
