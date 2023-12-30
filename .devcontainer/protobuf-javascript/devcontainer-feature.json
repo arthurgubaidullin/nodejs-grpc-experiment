@@ -1,6 +1,6 @@
 {
   "id": "protobuf-javascript",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "name": "Protocol Buffer (Protobuf) JS Compiler (via Github Releases)",
   "documentationURL": "",
   "description": "A compiler for protocol buffer definition files.",
