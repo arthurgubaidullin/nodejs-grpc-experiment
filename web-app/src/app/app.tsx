@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import {
   GreeterClient,
   HelloRequest,
-} from '@nodejs-grpc-experiment/rpc-web-client';
+} from '@nodejs-grpc-experiment/rpc-web-client-vite';
 
 export function App() {
   const [state, setState] = useState('');
