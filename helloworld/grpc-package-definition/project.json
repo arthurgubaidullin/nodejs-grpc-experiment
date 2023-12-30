@@ -11,7 +11,13 @@
         "outputPath": "dist/helloworld/grpc-package-definition",
         "main": "helloworld/grpc-package-definition/src/index.ts",
         "tsConfig": "helloworld/grpc-package-definition/tsconfig.lib.json",
-        "assets": []
+        "assets": [
+          {
+            "glob": "**/*.proto",
+            "input": "protos",
+            "output": "./src/lib"
+          }
+        ]
       }
     },
     "lint": {

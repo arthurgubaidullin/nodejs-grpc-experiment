@@ -1,1 +1,1 @@
-export * from './lib/helloworld-grpc-package-definition';
+export * from './lib/helloworld-package-definition';
