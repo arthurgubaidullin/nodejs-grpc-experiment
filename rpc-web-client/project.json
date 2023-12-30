@@ -7,7 +7,7 @@
     "gen:types": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "protoc -I=protos helloworld.proto --js_out=import_style=commonjs:rpc-web-client/src/lib --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:rpc-web-client/src/lib"
+        "command": "protoc -I=protos helloworld.proto --js_out=import_style=commonjs:rpc-web-client/src/lib --grpc-web_out=import_style=typescript,mode=grpcwebtext:rpc-web-client/src/lib"
       }
     },
     "build": {
