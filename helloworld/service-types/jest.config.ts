@@ -1,11 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: 'helloworld-types',
-  preset: '../jest.preset.js',
+  displayName: 'helloworld-grpc-types',
+  preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../coverage/helloworld-types',
+  coverageDirectory: '../../coverage/helloworld/service-types',
 };

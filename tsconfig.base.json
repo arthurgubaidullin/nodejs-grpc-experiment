@@ -16,8 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nodejs-grpc-experiment/helloworld-types": [
-        "helloworld-types/src/index.ts"
+      "@nodejs-grpc-experiment/helloworld-grpc-types": [
+        "helloworld/service-types/src/index.ts"
       ]
     }
   },
