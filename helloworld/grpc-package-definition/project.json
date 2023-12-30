@@ -1,0 +1,23 @@
+{
+  "name": "helloworld-grpc-package-definition",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "helloworld/grpc-package-definition/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/helloworld/grpc-package-definition",
+        "main": "helloworld/grpc-package-definition/src/index.ts",
+        "tsConfig": "helloworld/grpc-package-definition/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
